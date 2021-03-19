@@ -2,6 +2,7 @@ package com.harish.movies_tmdb
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -43,5 +44,7 @@ class MainActivity : AppCompatActivity() {
         val adapter = AllMoviesAdapter()
         adapter.submitList(data)
         main_movie_nested_recyclerview.adapter = adapter
+        load_layout.visibility = View.GONE
+        main_movie_nested_recyclerview.visibility=View.VISIBLE
     }
 }
