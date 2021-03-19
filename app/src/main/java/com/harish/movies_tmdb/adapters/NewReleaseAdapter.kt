@@ -14,7 +14,7 @@ class NewReleaseAdapter(val movies:List<MovieItem>) :RecyclerView.Adapter<NewRel
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.row_arc_view, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.row_new_release, parent, false)
 
         return ViewHolder(view)
     }

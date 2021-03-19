@@ -18,12 +18,13 @@ class MovieViewModel(val app: Application) : AndroidViewModel(app) {
     val moviesRepository = MoviesRepository(app)
     val moviesDao = MoviesDatabase.getDatabase(app).moviesDao()
     val moviesData = moviesDao.getMoviesFromDb()
+    val events = moviesRepository.networkEvents
 
     fun getMoviesFromServer() = moviesRepository.getMoviesFromServer(viewModelScope)
-    fun getMovies(allMovies: List<MovieItem>): LiveData<List<MoviesUIGroup>> {
+
+    fun handleMoviesGrouping(allMovies: List<MovieItem>): LiveData<List<MoviesUIGroup>> {
 
         val movies = MediatorLiveData<List<MoviesUIGroup>>()
-        //var allMovies = moviesDao.getMoviesFromDb()
         val result = processMovieGroups(allMovies)
         movies.postValue(result)
         return movies

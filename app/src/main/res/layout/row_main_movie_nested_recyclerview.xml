@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="#121212"
+    android:layout_marginTop="12dp"
     android:layout_height="wrap_content">
 
     <TextView
@@ -30,7 +31,7 @@
         android:id="@+id/rv_row"
         android:layout_width="0dp"
         android:nestedScrollingEnabled="false"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="4dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
